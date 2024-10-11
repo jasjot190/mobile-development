@@ -1,12 +1,21 @@
-import { View, Text } from "react-native";
+/**
+ * My To Do List App
+ *
+ * @format
+ */
+
 import React from "react";
+import { SafeAreaView } from "react-native";
+import ToDoList from "../components/ToDoList";
+import ToDoForm from "../components/ToDoForm";
 
-const index = () => {
+function App() {
   return (
-    <View>
-      <Text>Lab1 assignment</Text>
-    </View>
+    <SafeAreaView>
+      <ToDoList />
+      <ToDoForm />
+    </SafeAreaView>
   );
-};
+}
 
-export default index;
+export default App;
