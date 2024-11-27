@@ -6,7 +6,7 @@
 
 import React from "react";
 import { useState } from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 import ToDoList from "../components/ToDoList";
 import ToDoForm from "../components/ToDoForm";
 
@@ -17,10 +17,22 @@ function App() {
     "Walk dog",
   ]);
 
+  const addTask = (task) => {
+    setListOfTasks([...listOfTasks, task]);
+  };
+
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={{
+        borderWidth: 5,
+        padding: 40,
+        margin: 40,
+        borderColor: "#808080",
+      }}
+    >
+      <Text style={{ fontSize: 35, fontWeight: 500 }}>List of Tasks</Text>
       <ToDoList tasks={listOfTasks} />
-      <ToDoForm />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 }
